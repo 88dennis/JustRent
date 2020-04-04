@@ -9,7 +9,7 @@ let rentalObjects = [
     {name:"Jack Hammer", description: "Portable Jackhammer", price: 800, imgSource:"/assets/images/jackhammer.jpg"},
     {name:"Welding Machine", description: "Portable Welding Machine",price: 900, imgSource:"assets/images/weldingmachine.jpg"},
     {name:"Coring Machine", description: "Portable Coring Machine", price: 5000, imgSource:"assets/images/coringmachine.jpg"},
-]
+];
 // console.log(rentalObjects);
 
 app.use(express.static("public"));
@@ -21,6 +21,8 @@ app.get("/", function(req, res){
 });
 
 app.get("/forRentItems", function(req, res){
+
+    console.log(rentalObjects[0]["name"]);
     res.render("viewRentalsPage", {rentalObjectsEjs: rentalObjects})
 });
 
