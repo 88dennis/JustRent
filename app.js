@@ -23,9 +23,23 @@ app.get("/", function(req, res){
 });
 
 app.get("/forRentItems", function(req, res){
-
-    
     res.render("viewRentalsPage", {rentalObjectsEjs: rentalObjects})
+});
+
+app.post("/forRentItems", function(req, res){
+    //rest route meaning same name as the get route
+//the form action will activate this route then send a body
+//the body is the object which will have a key pertaining to name you indicated on the form
+
+//the form from the landing page will send a body 
+console.log(req);
+//to view the req.body you need to install the nmp i body-parser and use it; no body parser, no req.body
+console.log(req.body);
+let newPost = req.body;
+rentalObjects.push(newPost);
+console.log("POST ROUTE");
+//redirects you to the getroute
+res.redirect("/forRentItems");
 });
 
 app.get("*", function(req, res){

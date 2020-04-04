@@ -1,7 +1,15 @@
-<%- include("partials/top.ejs") %>
+<%- include("partials/top") %>
 
     <h1>JUST RENT</h1>
 
+
+    <form action="/forRentItems" method="POST">
+        <input type="text" name="name" placeholder="add item for rent">
+        <input type="text" name="description" placeholder="add a description">
+        <input type="number" name="price" placeholder="add a description">
+        <input type="text" name="imgSource" placeholder="add the URL of your image">
+        <input type="submit" value="submit">
+    </form>
     <a href="/forRentItems">Featured Items</a>
 
-    <%- include("partials/bottom.ejs") %>
+    <%- include("partials/bottom") %>
