@@ -1,17 +1,19 @@
-<h1>ITEMS FOR RENT</h1>
+<%- include("partials/top.ejs") %>
+
+    <h1>ITEMS FOR RENT</h1>
+
+    <% for(let i = 0; i < rentalObjectsEjs.length; i++){ %>
+
+        <div>
+            <h4>
+                <%= rentalObjectsEjs[i]["name"] %>
+            </h4>
+            <img src="<%= rentalObjectsEjs[i]['imgSource'] %>" alt="<%= rentalObjectsEjs[i][" imgSource "] %>">
+
+        </div>
+        <% } %>
 
 
-<li>
-    <%= rentalObjectsEjs%>
-</li>
+            <a href="/ ">Home</a>
 
-<!-- <%for(let i = 0; i < rentalObjectsEjs.length; i++){%>
-    <li>
-        <%= rentalObjectsEjs[i][name] %>
-    </li>
-
-    <%}%> -->
-
-
-
-<a href="/">Home</a>
+            <%- include("partials/bottom.ejs") %>

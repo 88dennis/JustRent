@@ -2,15 +2,17 @@ let express = require("express");
 let bodyParser = require("body-parser");
 let PORT = 3000;
 let app = express();
+
 let rentalObjects = [
-    {name:"Generator Set", description: "10KVA", price: 1200, imgSource:"/assets/images/generator.jpg"},
-    {name:"Industrial fan", description: "Stand Fan", price: 1900, imgSource:"/assets/images/industrialFan.jpg"},
-    {name:"Air cooler", description: "fan coolers", price: 2500, imgSource:"/assets/images/aircooler.jpg"},
-    {name:"Jack Hammer", description: "Portable Jackhammer", price: 800, imgSource:"/assets/images/jackhammer.jpg"},
-    {name:"Welding Machine", description: "Portable Welding Machine",price: 900, imgSource:"assets/images/weldingmachine.jpg"},
-    {name:"Coring Machine", description: "Portable Coring Machine", price: 5000, imgSource:"assets/images/coringmachine.jpg"},
+    {name:"Generator Set", description: "10KVA", price: 1200, imgSource:"/images/generator.jpg"},
+    {name:"Industrial fan", description: "Stand Fan", price: 1900, imgSource:"https://i.imgur.com/vcqEmRW.jpg"},
+    {name:"Air cooler", description: "fan coolers", price: 2500, imgSource:"/images/aircooler.jpg"},
+    {name:"Jack Hammer", description: "Portable Jackhammer", price: 800, imgSource:"https://i.imgur.com/SyuUX9F.jpg"},
+    {name:"Welding Machine", description: "Portable Welding Machine",price: 900, imgSource:"https://i.imgur.com/EF8eRoG.jpg"},
+    {name:"Coring Machine", description: "Portable Coring Machine", price: 5000, imgSource:"/images/coringmachine.jpg"},
 ];
 // console.log(rentalObjects);
+console.log(rentalObjects[0]["name"]);
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -22,7 +24,7 @@ app.get("/", function(req, res){
 
 app.get("/forRentItems", function(req, res){
 
-    console.log(rentalObjects[0]["name"]);
+    
     res.render("viewRentalsPage", {rentalObjectsEjs: rentalObjects})
 });
 
