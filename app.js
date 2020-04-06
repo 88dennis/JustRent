@@ -71,3 +71,31 @@ app.get("*", function (req, res) {
 app.listen(PORT, function () {
     console.log("Connected to http://localhost:" + PORT)
 });
+
+
+// function thousands_separators(num)
+//   {
+//     var num_parts = num.toString().split(".");
+//     num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+//     return num_parts.join(".");
+//   }
+
+// console.log(thousands_separators(1000));
+// console.log(thousands_separators(10000.23));
+// console.log(thousands_separators(100000));
+
+
+//----------------- GOOD
+
+// var number = 987654321;
+// number.toLocaleString(); // "987,654,321"
+// // A more complex example: 
+// var number2 = 9876.54321; // floating point example
+// number2.toLocaleString(undefined, {
+// 	maximumFractionDigits: 2
+// }); // "9,876.54"
+
+//----------------
+
+// var nf = new Intl.NumberFormat();
+// nf.format(number); // "1,234,567,890"

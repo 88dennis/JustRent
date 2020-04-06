@@ -15,16 +15,34 @@
                 </h3>
             </div>
         </div>
+        <!-- display flex wrap determines the minimum space required to align each grid -->
+        <div class="row" style="display:flex; flex-wrap: wrap;">
+            <% for(let i = 0; i < rentalObjectsEjs.length; i++){ %>
+                <div class="col-md-3 col-sm-6" style="margin-bottom: 5px;">
+                    <div class="thumbnail">
+                        <img src="<%= rentalObjectsEjs[i]['imgSource'] %>" height="100%" width="100%" alt="<%= rentalObjectsEjs[i][" imgSource "] %>">
+                    </div>
 
-        <% for(let i = 0; i < rentalObjectsEjs.length; i++){ %>
-            <div>
-                <h4>
-                    <%= rentalObjectsEjs[i]["name"] %>
-                </h4>
-                <img src="<%= rentalObjectsEjs[i]['imgSource'] %>" alt="<%= rentalObjectsEjs[i][" imgSource "] %>">
-            </div>
-            <% } %>
-
-
+                    <div class="caption">
+                        <h4>
+                            <%= rentalObjectsEjs[i]["name"] %>
+                        </h4>
+                    </div>
+                    <div class="caption">
+                        <h6>
+                            <%= rentalObjectsEjs[i]["description"] %>
+                        </h6>
+                    </div>
+                    <div class="caption">
+                        <h6>
+                            <%= rentalObjectsEjs[i]["price"] %>
+                        </h6>
+                    </div>
+                </div>
+                <% } %>
+                    <!-- below is the closing div for row -->
+        </div>
+        <!-- below is the closing div for container -->
     </div>
+
     <%- include("partials/bottom") %>
