@@ -64,9 +64,9 @@ app.post("/forRentItems", function (req, res) {
     res.redirect("/forRentItems");
 });
 
-app.get("*", function (req, res) {
-    res.send("PAGE NOT FOUND");
-});
+// app.get("*", function (req, res) {
+//     res.send("PAGE NOT asd");
+// });
 
 app.listen(PORT, function () {
     console.log("Connected to http://localhost:" + PORT)
